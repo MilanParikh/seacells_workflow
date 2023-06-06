@@ -83,7 +83,7 @@ task split_anndata {
 
         adata = sc.read_h5ad("~{anndata_file}")
 
-        for sample in adata.obs['~sample_col'].unique():
+        for sample in adata.obs['~{sample_col}'].unique():
             temp = adata[adata.obs['~{sample_col}'] == sample].copy()
             temp.write(f"outputs/{sample}.h5ad")
 
