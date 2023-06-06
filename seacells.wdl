@@ -128,6 +128,7 @@ task run_seacells {
         python <<CODE
         import os
         import scanpy as sc
+        import numpy as np
         import matplotlib
         import SEACells
 
