@@ -21,4 +21,7 @@ RUN ln -s /usr/bin/python3 /usr/bin/python
 
 RUN python -m pip install --upgrade pip --no-cache-dir && \
     python -m pip install --upgrade setuptools wheel --no-cache-dir && \
-    python -m pip install 'scanpy[leiden]' tqdm cmake SEACells
+    python -m pip install 'scanpy[leiden]' tqdm cmake SEACells jupyterlab ipywidgets jupyter_contrib_nbextensions
+
+RUN jupyter contrib nbextension install --sys-prefix && \
+    jupyter nbextension enable --py widgetsnbextension
