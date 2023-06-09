@@ -138,6 +138,9 @@ task run_seacells {
         print(f"***Number of SEACells = {n_SEACells}***")
         n_waypoint_eigs = ~{n_waypoint_eigenvalues}
 
+        if ((n_SEACells + 1) < n_waypoint_eigs):
+            n_waypoint_eigs = n_SEACells + 1
+
         model = SEACells.core.SEACells(adata, 
                                 build_kernel_on='X_pca', 
                                 n_SEACells=n_SEACells, 
