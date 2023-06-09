@@ -134,7 +134,7 @@ task run_seacells {
 
         adata = sc.read_h5ad("~{sample_anndata_file}")
 
-        n_SEACells = np.ceil(adata.shape[0]/~{n_cells_per_seacell})
+        n_SEACells = np.ceil(adata.shape[0]/~{n_cells_per_seacell}).astype(np.int64)
         print(f"***Number of SEACells = {n_SEACells}***")
         n_waypoint_eigs = ~{n_waypoint_eigenvalues}
 
